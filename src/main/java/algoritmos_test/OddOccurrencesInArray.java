@@ -1,6 +1,8 @@
 package algoritmos_test;
 
 
+import java.util.Arrays;
+
 public class OddOccurrencesInArray {
 
     //TODO
@@ -23,7 +25,7 @@ public class OddOccurrencesInArray {
 //
 //    For example, given array A such that:
 //
-//    org.checkerframework.checker.units.qual.A[0] = 9  A[1] = 3  A[2] = 9
+//    A[0] = 9  A[1] = 3  A[2] = 9
 //    A[3] = 3  A[4] = 9  A[5] = 7
 //    A[6] = 9
 //    the function should return 7, as explained in the example above.
@@ -47,11 +49,9 @@ public class OddOccurrencesInArray {
 
     public static int solution(int[] A) {
 
-        int compare = A[0];
-        for(int i = 1; i < A.length; i++) {
-            compare = compare ^ A[i];
-        }
-        return compare;
+        int[] smallestInt = {1};
+        Arrays.stream(A).sorted().filter(x -> x == smallestInt[0]).forEach(x -> smallestInt[0]++);
+        return smallestInt[0];
     }
 
 
