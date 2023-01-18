@@ -10,12 +10,12 @@ public class Main {
         Data data = new Data();
         Thread sender = new Thread(new Sender(data));
         Thread receiver = new Thread(new Receiver(data));
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-        executor.submit(sender);
-        executor.submit(receiver);
-        executor.shutdown();
+//        ExecutorService executor = Executors.newFixedThreadPool(2);
+//        executor.submit(sender);
+//        executor.submit(receiver);
+//        executor.shutdown();
 
-//        sender.start();
-//        receiver.start();
+        sender.start();
+        receiver.start();
     }
 }

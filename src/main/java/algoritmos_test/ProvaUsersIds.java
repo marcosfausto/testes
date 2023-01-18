@@ -4,7 +4,7 @@ package algoritmos_test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Prova {
+public class ProvaUsersIds {
 
     //TODO
     // Vai receber um Variable Arguments de maps contendo a chave String e o value UserStats
