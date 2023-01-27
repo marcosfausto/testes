@@ -1,14 +1,13 @@
 package streams;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
 
 public class StreamExemplos {
     public static void main(String[] args) {
@@ -75,10 +74,36 @@ public class StreamExemplos {
         Supplier<String> supplier = () -> "bla";
         System.out.println(supplier.get());
 
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> numbers = Arrays.asList(6, 5, 4, 3, 2, 1);
         int result = numbers
                 .stream()
-                .reduce(0, (subtotal, element) -> subtotal + element);
+                .reduce(0, Integer::sum);
+
+        User user1 = User.builder()
+                .id(1)
+                .nome("gilmar")
+                .build();
+
+        User user2 = User.builder()
+                .id(2)
+                .nome("felipe")
+                .build();
+
+        User user3 = User.builder()
+                .id(3)
+                .nome("marcos")
+                .build();
+
+        List<User> userList = new ArrayList<>(Arrays.asList(user1,user2,user3));
+
+        Map<String, List<User>> userNomeMap = userList.stream().collect(groupingBy(User::getNome));
+
+        userNomeMap.forEach((k,v) -> System.out.println("key: " + k + " value: " + v));
+        
+        int i;
+        Integer x = 2;
+
+        System.out.println(x +1);
 
         boolean bla = result == 21;
         System.out.println(bla);

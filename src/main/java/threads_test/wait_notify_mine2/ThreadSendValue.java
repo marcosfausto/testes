@@ -2,6 +2,9 @@ package threads_test.wait_notify_mine2;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+
+import static threads_test.wait_notify_mine2.ThreadTest.now;
 
 public class ThreadSendValue extends Thread {
     // initiated run method for Thread
@@ -21,13 +24,14 @@ public class ThreadSendValue extends Thread {
         for (User user : userList) {
             senderReceiver.send(user);
 
+
             // Thread.sleep() to mimic heavy server-side processing
-            try {
-                Thread.sleep(ThreadLocalRandom.current().nextInt(1000, 5000));
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                System.err.println("Thread Interrupted");
-            }
+//            try {
+//                Thread.sleep(ThreadLocalRandom.current().nextInt(1000, 5000));
+//            } catch (InterruptedException e) {
+//                Thread.currentThread().interrupt();
+//                System.err.println("Thread Interrupted");
+//            }
         }
     }
 

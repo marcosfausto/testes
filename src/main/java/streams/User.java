@@ -20,4 +20,14 @@ public class User implements Comparable {
     }
 //    private String email;
 //    private String address;
+
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("id=").append(id);
+        sb.append(", nome='").append(nome).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
