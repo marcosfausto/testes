@@ -18,15 +18,17 @@ public class SequenceGenerator {
 
     private int currentValue = 0;
 
-    public synchronized int getNextSequence() {
+
+    // invoking this without synchronized it will die
+    public int getNextSequence() {
         currentValue = currentValue + 1;
         return currentValue;
     }
 
     @Test
     public void givenUnsafeSequenceGenerator_whenRaceCondition_thenUnexpectedBehavior() throws Exception {
-        int count = 1000000;
-        Set<Integer> uniqueSequences = getUniqueSequences(new SequenceGenerator(), count);
+        int count = 100000;
+        Set<Integer> uniqueSequences = getUniqueSequences(new SequenceGeneratorUsingStampedLock(), count);
         assertEquals(count, uniqueSequences.size());
     }
 
@@ -37,6 +39,7 @@ public class SequenceGenerator {
         List<Future<Integer>> futures = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
+         //   futures.add(executor.submit(() -> generator.getNextSequence()));
             futures.add(executor.submit(generator::getNextSequence));
         }
 
