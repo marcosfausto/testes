@@ -1,14 +1,11 @@
 package threads_test.future_test;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.concurrent.*;
 
-public class Main {
+public class MainSingleThread {
     public static void main(String[] args) {
-       // Future<Integer> future = new SquareCalculator().calculate(10);
-        SquareCalculator squareCalculator = new SquareCalculator();
+        // Future<Integer> future = new SquareCalculator().calculate(10);
+        SquareCalculator squareCalculator = new SquareCalculator(Executors.newSingleThreadExecutor());
         Future<Integer> future = squareCalculator.calculate(10);
 
 
