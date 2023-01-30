@@ -20,6 +20,9 @@ public class MainComparatorTest {
         userList2.sort(byId);
         System.out.println("Sorted byId: " + userList);
 
+        TreeMap<User,String> userStringTreeMap= new TreeMap<>(byId);
+
+
         List<User> userList3 = new ArrayList<>(Arrays.asList(user1,user2,user3));
         Comparator<User> byNome = Comparator.comparing(User::getNome);
         userList3.sort(byNome);

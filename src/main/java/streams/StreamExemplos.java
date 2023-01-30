@@ -24,6 +24,20 @@ public class StreamExemplos {
         // map recebe uma function
         list.stream().map(function).forEach(consumer);
 
+        int sum = list.stream().mapToInt(Integer::intValue).sum();
+
+        System.out.println("Sum: " + sum);
+
+        Integer reduce = list.stream().reduce(0, Integer::sum);
+
+        System.out.println("reduce: " + reduce);
+
+        boolean anyMatch = list.stream().anyMatch(x -> x > 5);
+        boolean allMatch = list.stream().allMatch(x -> x > 5);
+
+        System.out.println("anyMatch: " + anyMatch);
+        System.out.println("allMatch: " + allMatch);
+
         // Receive a parameter and return a boolean
         Predicate<Integer> predicate = x -> x > 8;
         System.out.println("Filter :");

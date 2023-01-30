@@ -14,5 +14,7 @@ public class MainStringTest {
        System.out.println(goku.substring(1));
        System.out.println(goku.replace("go","ku"));
         System.out.println(goku.substring(0,1));
+
+
     }
 }

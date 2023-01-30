@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -26,5 +28,16 @@ public class UserComparable implements Comparable<UserComparable>{
        // return Integer.compare(getId(), otherUser.getId());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserComparable that = (UserComparable) o;
+        return Objects.equals(nome, that.nome);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome);
+    }
 }
