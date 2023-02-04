@@ -44,7 +44,9 @@ public class StreamExemplos {
         // filter recebe um predicate : recebe parametros e retorna um boleano
         list.stream().filter(predicate).forEach(System.out::println);
 
+        Optional<Integer> any = list.stream().filter(x -> x > 20).findAny();
 
+        any.ifPresent(System.out::println);
 
         Optional<Integer> findFirst = list.stream()
                 .filter(number -> number > 5)
