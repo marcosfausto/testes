@@ -42,16 +42,18 @@ public class OddOccurrencesInArray {
 //    A[3] = 3  A[4] = 9  A[5] = 7
 //    A[6] = 9
 
-        int[] A = {9,3,9,3,9,7,9,5,6,8,8,6,5};
+        int[] A = {9,3,9,3,9,7,9};
 
         System.out.println(solution(A));
     }
 
     public static int solution(int[] A) {
-
-        int[] smallestInt = {1};
-        Arrays.stream(A).sorted().filter(x -> x == smallestInt[0]).forEach(x -> smallestInt[0]++);
-        return smallestInt[0];
+        int number = 0;
+        int[] sortedArray = Arrays.stream(A).sorted().toArray();
+        for (int i : sortedArray) {
+            number = number ^ i;
+        }
+        return number;
     }
 
 
