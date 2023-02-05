@@ -114,8 +114,14 @@ public class StreamExemplos {
 
         Map<String, List<User>> userNomeMap = userList.stream().collect(groupingBy(User::getNome));
 
+        Map<String, User> userNomeMap2 = userList.stream().collect(Collectors.toMap(User::getNome, x -> x));
+
+
         userNomeMap.forEach((k,v) -> System.out.println("key: " + k + " value: " + v));
-        
+
+        userNomeMap2.forEach((k,v) -> System.out.println("key: " + k + " value: " + v));
+
+
         int i;
         Integer x = 2;
 

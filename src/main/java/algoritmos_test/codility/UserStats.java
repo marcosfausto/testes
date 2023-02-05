@@ -1,4 +1,4 @@
-package algoritmos_test;
+package algoritmos_test.codility;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

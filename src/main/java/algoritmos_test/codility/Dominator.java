@@ -1,4 +1,4 @@
-package algoritmos_test;
+package algoritmos_test.codility;
 
 import java.util.Collections;
 import java.util.Comparator;

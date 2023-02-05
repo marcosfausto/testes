@@ -1,4 +1,4 @@
-package algoritmos_test;
+package algoritmos_test.codility;
 
 //TODO
 //This is a demo task.

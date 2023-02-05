@@ -1,4 +1,4 @@
-package algoritmos_test;
+package algoritmos_test.codility;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
