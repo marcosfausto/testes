@@ -10,9 +10,9 @@ import java.util.List;
 
 public class Strategy {
     public static void main(String[] args) {
-        User user1 = new User(3,"Gilmar");
-        User user2 = new User(1,"Frederico");
-        User user3 = new User(2,"Marcos");
+        User user1 = new User(3,"Gilmar","M");
+        User user2 = new User(1,"Frederico","M");
+        User user3 = new User(2,"Marcos","M");
 
         // One of the best example of strategy pattern is Collections.sort() method that takes Comparator parameter.
         // Based on the different implementations of Comparator interfaces,

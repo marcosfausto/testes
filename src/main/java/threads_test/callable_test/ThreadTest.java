@@ -25,6 +25,7 @@ public class ThreadTest {
 
         executor.submit(threadSendValue);
         Future<User> future = executor.submit(threadGetValue);
+        System.out.println(future.isDone());
         System.out.println(future.get());
         System.out.println(future.isDone());
         executor.shutdown();
