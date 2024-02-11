@@ -26,6 +26,7 @@ public class ThreadTest {
         executor.submit(threadSendValue);
         executor.submit(threadGetValue);
         executor.shutdown();
+        
 //        threadSendValue.start();
 //        threadGetValue.start();
 

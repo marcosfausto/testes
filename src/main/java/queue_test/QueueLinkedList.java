@@ -1,7 +1,6 @@
 package queue_test;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class QueueLinkedList {
 
@@ -33,6 +32,7 @@ public class QueueLinkedList {
         // implementation.
         int size = queue.size();
         System.out.println("Size of queue- " + size);
+
     }
 }
 
